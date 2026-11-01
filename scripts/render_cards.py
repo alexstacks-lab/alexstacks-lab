@@ -357,7 +357,23 @@ EXTRA = {
     "terminal": "M2 3h20a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm2.3 4.2L3 8.6l4 3.4-4 3.4 1.3 1.4L9.9 12zM11 15.5v2h8v-2z",
     "code": "M8.7 6.3L7.3 4.9 0.2 12l7.1 7.1 1.4-1.4L3 12zm6.6 0l1.4-1.4 7.1 7.1-7.1 7.1-1.4-1.4L21 12zM13.4 3l1.9.6-4.7 17.4-1.9-.6z",
     "radar": "M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm0 2.2a9.8 9.8 0 0 1 9.7 8.3h-2.3A7.6 7.6 0 1 0 12 19.6v2.2A9.8 9.8 0 1 1 12 2.2zm0 4.4a5.4 5.4 0 0 1 5.2 3.9h-2.4A3.2 3.2 0 1 0 12 15.2v2.2a5.4 5.4 0 1 1 0-10.8zM12 10.9a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2zm1.1.6l9-5.2 1.1 1.9-9 5.2z",
+    "usb": "M9 1h6v7H9zm1.3 2v2h1.2V3zm2.2 0v2h1.2V3zM7 9h10v11a3 3 0 0 1-3 3h-4a3 3 0 0 1-3-3z",
+    "wrench": "M21.7 6.3l-3.4 3.4-3.2-.8-.8-3.2 3.4-3.4A6 6 0 0 0 10 10.1L2.6 17.5a2 2 0 0 0 0 2.8l1.1 1.1a2 2 0 0 0 2.8 0L13.9 14a6 6 0 0 0 7.8-7.7z",
+    "gear": "M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm9 5.2v-2.4l-2.6-.6a7 7 0 0 0-.8-1.8l1.4-2.3-1.7-1.7-2.3 1.4a7 7 0 0 0-1.8-.8L12.6 2h-2.4l-.6 2.6a7 7 0 0 0-1.8.8L5.5 4 3.8 5.7l1.4 2.3a7 7 0 0 0-.8 1.8L2 10.4v2.4l2.6.6a7 7 0 0 0 .8 1.8L4 17.5l1.7 1.7 2.3-1.4a7 7 0 0 0 1.8.8l.6 2.6h2.4l.6-2.6a7 7 0 0 0 1.8-.8l2.3 1.4 1.7-1.7-1.4-2.3a7 7 0 0 0 .8-1.8z",
+    "chip": "M6 6h12v12H6zM9 1h2v4H9zm4 0h2v4h-2zM9 19h2v4H9zm4 0h2v4h-2zM1 9h4v2H1zm0 4h4v2H1zm18-4h4v2h-4zm0 4h4v2h-4zM9.5 9.5v5h5v-5z",
+    "disk": "M3 4h18a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm9 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 3.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z",
+    "globe": "M12 1a11 11 0 1 0 0 22 11 11 0 0 0 0-22zM3.1 11h4c.1-2.7.7-5.1 1.6-6.9A9 9 0 0 0 3.1 11zm0 2a9 9 0 0 0 5.6 6.9c-.9-1.8-1.5-4.2-1.6-6.9zm6 0c.2 4.4 1.7 7.5 2.9 8 1.2-.5 2.7-3.6 2.9-8zm0-2h5.8c-.2-4.4-1.7-7.5-2.9-8-1.2.5-2.7 3.6-2.9 8zm7.9 0h4a9 9 0 0 0-5.6-6.9c.9 1.8 1.5 4.2 1.6 6.9zm0 2c-.1 2.7-.7 5.1-1.6 6.9a9 9 0 0 0 5.6-6.9z",
+    "shield": "M12 1L3 5v6c0 5.6 3.8 10.7 9 12 5.2-1.3 9-6.4 9-12V5zm-1.2 15.2L6.6 12l1.4-1.4 2.8 2.8 5.2-5.2 1.4 1.4z",
+    "kanban": "M2 3h6v18H2zm7 0h6v12H9zm7 0h6v8h-6z",
+    "heart": "M12 21l-1.5-1.3C5 15 2 12.2 2 8.6A5.4 5.4 0 0 1 7.5 3c1.8 0 3.4.9 4.5 2.2A5.9 5.9 0 0 1 16.5 3 5.4 5.4 0 0 1 22 8.6c0 3.6-3 6.4-8.5 11.1z",
+    "game": "M7 6h10a5 5 0 0 1 5 5v4a3 3 0 0 1-5.4 1.8L15 15H9l-1.6 1.8A3 3 0 0 1 2 15v-4a5 5 0 0 1 5-5zm0 3v2H5v2h2v2h2v-2h2v-2H9V9zm9.5 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 2a1 1 0 1 0 0 2 1 1 0 0 0 0-2z",
+    "flag": "M4 2h2v20H4zm3 1h12l-3 4 3 4H7z",
+    "cycle": "M12 4V1L7.5 5.5 12 10V7a5 5 0 1 1-5 5H4a8 8 0 1 0 8-8z",
 }
+
+
+def icon_rule(slug):
+    return ' fill-rule="evenodd"' if slug in EXTRA else ""
 
 
 def icon_path(slug):
@@ -425,7 +441,7 @@ def render_stack():
                          f'fill="{c}" fill-opacity="0.07"/>')
             s_ = 16 / 24
             parts.append(f'<path transform="translate({x + 13:.1f} {y + (CH - 16) / 2:.1f}) scale({s_:.4f})" '
-                         f'd="{icon_path(slug)}" fill="{c}"/>')
+                         f'd="{icon_path(slug)}" fill="{c}"{icon_rule(slug)}/>')
             parts.append(f'<text x="{x + 13 + 16 + 9:.1f}" y="{y + CH / 2 + 5:.1f}" font-size="{FS}" '
                          f'font-weight="700" fill="{INK}">{esc(name)}</text>')
             parts.append('</g></g>')
@@ -473,7 +489,7 @@ def contact_chip(fname, label, value, color, slug=None, dot=False, delay=0.0):
                      f'<text x="{ix + 9}" y="{iy + 14}" font-size="12.5" font-weight="700" fill="{BG}" '
                      f'text-anchor="middle" font-family="Arial, Helvetica, sans-serif">in</text>')
     elif slug:
-        parts.append(f'<path transform="translate({ix} {iy}) scale(0.75)" d="{icon_path(slug)}" fill="{c}"/>')
+        parts.append(f'<path transform="translate({ix} {iy}) scale(0.75)" d="{icon_path(slug)}" fill="{c}"{icon_rule(slug)}/>')
     parts.append(f'<text x="{ix + icon_w + 10}" y="{y + CH / 2 + 5}" font-size="{FS}" xml:space="preserve">'
                  f'<tspan fill="{INK}" font-weight="700">{esc(label)}</tspan>'
                  f'<tspan fill="{MUTED}">  {esc(value)}</tspan></text>')
@@ -496,6 +512,143 @@ def render_contact():
         contact_chip(f, l, v, c, slug, dot, delay=0.1 + i * 0.08)
 
 
+# =============================================================================
+# 7. HACK THE BOX — último pwn
+# =============================================================================
+HTB_BG1, HTB_BG2, HTB_LIME, HTB_TILE = "#1a2332", "#0b121c", "#9FEF00", "#111927"
+
+
+def count_up(x, y, value, start, size, color, fmt="{:,}", prefix="", frames=14, dur=1.1, anchor="start"):
+    out = []
+    for k in range(1, frames + 1):
+        v = value * (1 - (1 - k / frames) ** 3)
+        on = start + dur * (k - 1) / frames
+        anim = f'<set attributeName="opacity" to="1" begin="{on:.3f}s"/>'
+        if k < frames:
+            anim += f'<set attributeName="opacity" to="0" begin="{start + dur * k / frames:.3f}s"/>'
+        out.append(f'<text x="{x}" y="{y}" opacity="0" font-size="{size}" font-weight="700" fill="{color}" '
+                   f'text-anchor="{anchor}">{prefix}{fmt.format(int(round(v)))}{anim}</text>')
+    return "".join(out)
+
+
+def render_htb():
+    h = P.get("htb")
+    if not h:
+        return
+    W, H = 880, 250
+    css = (FADE_CSS + ".ring{transform-box:fill-box;transform-origin:center;animation:spin 14s linear infinite}"
+           "@keyframes spin{to{transform:rotate(360deg)}}"
+           ".glw{animation:glw 2.4s ease-in-out infinite alternate}@keyframes glw{0%{opacity:.25}100%{opacity:.7}}")
+    parts = svg_open(W, H, css)
+    parts += window(W, H, f"{USER}@{HOST}: ~$ ./htb.sh --last-pwn", "hbg", HTB_BG1, HTB_BG2, "#2a3a52", "#8b9bb4")
+    parts.append('<defs><filter id="hg"><feGaussianBlur stdDeviation="8"/></filter></defs>')
+    # logo con anillo girando
+    cx, cy, r = 110, 140, 62
+    parts.append(f'<circle class="glw" cx="{cx}" cy="{cy}" r="{r}" fill="{HTB_LIME}" filter="url(#hg)"/>')
+    parts.append(f'<circle cx="{cx}" cy="{cy}" r="{r}" fill="{HTB_TILE}" stroke="{HTB_LIME}" stroke-width="3"/>')
+    parts.append(f'<circle class="ring" cx="{cx}" cy="{cy}" r="{r + 9}" fill="none" stroke="{HTB_LIME}" '
+                 f'stroke-width="2" stroke-dasharray="6 10" stroke-opacity=".6"/>')
+    parts.append(f'<path transform="translate({cx - 30} {cy - 30}) scale(2.5)" d="{icon_path("hackthebox")}" fill="{HTB_LIME}"/>')
+    # texto
+    x0 = 210
+    parts.append(f'<text class="f" style="animation-delay:.2s" x="{x0}" y="78" font-size="13" fill="#8b9bb4">'
+                 f'Hack The Box · <tspan fill="{HTB_LIME}" font-weight="700">{esc(h["user"])}</tspan></text>')
+    parts.append(f'<text class="f" style="animation-delay:.35s" x="{x0}" y="112" font-size="26" font-weight="700" '
+                 f'fill="{INK}">Pwned: <tspan fill="{HTB_LIME}">{esc(h["machine"])}</tspan></text>')
+    lines = [("[+]", "user.txt", "capturada"), ("[+]", "root.txt", "capturada")]
+    t = 0.7
+    for i, (pre, flag, st) in enumerate(lines):
+        y = 146 + i * 24
+        parts.append(wipe(f"hf{i}", x0, y - 16, 330, 22, t, 0.5))
+        parts.append(f'<g clip-path="url(#hf{i})"><text x="{x0}" y="{y}" font-size="14" xml:space="preserve">'
+                     f'<tspan fill="{HTB_LIME}" font-weight="700">{pre}</tspan><tspan fill="{INK}"> {flag}</tspan>'
+                     f'<tspan fill="#8b9bb4">  {st}</tspan></text></g>')
+        t += 0.55
+    parts.append(f'<text class="f" style="animation-delay:{t + .1:.2f}s" x="{x0}" y="{146 + 2 * 24 + 8}" font-size="12.5" '
+                 f'fill="#8b9bb4">ruta: {esc(h.get("path", ""))}</text>')
+    # tarjetas de números
+    tiles = [("machine rank", h["rank"], "#", HTB_LIME), ("XP ganada", h["xp"], "", "#C084FC"), ("fecha", None, h["date"], INK)]
+    tx, tw, th, ty = 560, 300, 54, 52
+    for i, (lab, val, extra, col) in enumerate(tiles):
+        y = ty + i * (th + 10)
+        parts.append(f'<g class="f" style="animation-delay:{.4 + i * .15:.2f}s">'
+                     f'<rect x="{tx}" y="{y}" width="{tw}" height="{th}" rx="9" fill="{HTB_TILE}" stroke="#2a3a52"/>'
+                     f'<text x="{tx + 16}" y="{y + 33}" font-size="13" fill="#8b9bb4">$ {esc(lab)}</text></g>')
+        if val is None:
+            parts.append(f'<text class="f" style="animation-delay:{.6 + i * .15:.2f}s" x="{tx + tw - 16}" y="{y + 36}" '
+                         f'font-size="20" font-weight="700" fill="{col}" text-anchor="end">{esc(extra)}</text>')
+        else:
+            parts.append(count_up(tx + tw - 16, y + 37, val, .6 + i * .15, 24, col, prefix=extra, anchor="end",
+                                  fmt="{}" if extra == "#" else "{:,}"))
+    save("htb.svg", parts)
+
+
+# =============================================================================
+# 8. AHORA MISMO y FUN FACTS
+# =============================================================================
+NOW_COL = {"green": GREEN, "lime": "#9FEF00", "pink": PINK, "cyan": CYAN, "gold": GOLD, "sage": SAGE}
+
+
+def render_now():
+    items = P.get("now", [])
+    if not items:
+        return
+    W = 880
+    top, lh = TITLEBAR_H + 36, 34
+    H = top + len(items) * lh + 6
+    parts = svg_open(W, H, FADE_CSS)
+    parts += window(W, H, f"{USER}@{HOST}: ~$ ./ahora.sh --live")
+    t = 0.2
+    for i, (col, text) in enumerate(items):
+        y = top + i * lh
+        c = NOW_COL.get(col, GREEN)
+        dur = 0.3 + len(text) * 0.012
+        # punto que late (desfasado para que no latan todos a la vez)
+        parts.append(f'<circle cx="{PAD + 8}" cy="{y - 5}" r="4.5" fill="{c}"/>'
+                     f'<circle cx="{PAD + 8}" cy="{y - 5}" r="4.5" fill="none" stroke="{c}" stroke-width="1.5">'
+                     f'<animate attributeName="r" values="4.5;11" dur="2s" begin="{i * .33:.2f}s" repeatCount="indefinite"/>'
+                     f'<animate attributeName="opacity" values=".9;0" dur="2s" begin="{i * .33:.2f}s" repeatCount="indefinite"/></circle>')
+        parts.append(wipe(f"n{i}", PAD + 22, y - 18, W - 2 * PAD - 22, 26, t, dur))
+        parts.append(f'<g clip-path="url(#n{i})"><text x="{PAD + 26}" y="{y}" font-size="15" fill="{INK}">{esc(text)}</text></g>')
+        t += dur * 0.6
+    save("now.svg", parts)
+
+
+def render_fun():
+    items = P.get("fun_facts", [])
+    if not items:
+        return
+    W = 880
+    top, lh = TITLEBAR_H + 36, 36
+    H = top + len(items) * lh - 14
+    css = FADE_CSS + (".wg{transform-box:fill-box;transform-origin:center;animation:wg 1.6s ease-in-out infinite alternate}"
+                      "@keyframes wg{0%{transform:rotate(-10deg)}100%{transform:rotate(10deg)}}")
+    parts = svg_open(W, H, css)
+    parts += window(W, H, f"{USER}@{HOST}: ~$ cat -n ~/fun_facts.txt")
+    cols = {"paw": PINK, "chip": GOLD, "game": CYAN, "heart": "#ff6b81"}
+    for i, (icon, text, logos) in enumerate(items):
+        y = top + i * lh
+        d = 0.2 + i * 0.18
+        c = cols.get(icon, GREEN)
+        parts.append(f'<g class="f" style="animation-delay:{d:.2f}s">')
+        parts.append(f'<text x="{PAD}" y="{y}" font-size="14" fill="{MUTED}">{i + 1:>2}</text>')
+        ix, iy = PAD + 34, y - 15
+        if icon == "paw":
+            parts.append(f'<g class="wg">{paw(ix + 9, iy + 10, 9, c)}</g>')
+        else:
+            parts.append(f'<g class="wg"><path transform="translate({ix} {iy}) scale(0.75)" d="{icon_path(icon)}" '
+                         f'fill="{c}"{icon_rule(icon)}/></g>')
+        parts.append(f'<text x="{ix + 30}" y="{y}" font-size="15" fill="{INK}">{esc(text)}</text>')
+        lx = ix + 30 + len(text) * 15 * 0.6 + 14
+        for j, slug in enumerate(logos):
+            col = "#" + ICONS[slug]["hex"] if slug != "mclaren" else "#FF8000"
+            if slug == "dota2":
+                col = "#E0503B"
+            parts.append(f'<path transform="translate({lx + j * 26:.1f} {iy}) scale(0.75)" d="{icon_path(slug)}" fill="{col}"/>')
+        parts.append('</g>')
+    save("fun.svg", parts)
+
+
 if __name__ == "__main__":
     render_boot()
     render_neofetch()
@@ -503,3 +656,6 @@ if __name__ == "__main__":
     render_projects()
     render_stack()
     render_contact()
+    render_htb()
+    render_now()
+    render_fun()

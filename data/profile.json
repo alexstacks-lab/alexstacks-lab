@@ -23,10 +23,10 @@
     ["Redes", "VLAN · ACL · NAT · SSH · Port-Sec"],
     ["SO", "Linux · Ubuntu · Red Hat · Kali"],
     ["Lab", "pfSense · OpenVPN · Pi-hole · VirtualBox"],
-    ["Tools", "Nmap · Wireshark · Packet Tracer"],
+    ["Tools", "Nmap · Wireshark · Packet Tracer · OSINT"],
     ["Code", "Python · C++ · JavaScript · Bash"],
     ["IoT", "Arduino · ESP32"],
-    ["Practica", "HackTheBox (Starting Point)"],
+    ["Practica", "HackTheBox · último pwn: Management"],
     ["Idiomas", "Español (nativo) · Inglés (básico)"],
     ["Meta", "Investigación de ciberdelitos"],
     ["Estado", "● Disponible para prácticas"]
@@ -45,10 +45,14 @@
   "projects": [
     {"name": "anzuelo/", "desc": "Juego diario anti-estafas para Perú (PWA) — ¿Picas o no picas?", "tag": "privado", "color": "pink"},
     {"name": "tesis-soc/", "desc": "SOC ligero + riesgo humano frente a estafas, para pymes", "tag": "privado", "color": "cyan"},
+    {"name": "ojo-de-dios/", "desc": "God's Eye View: OSINT geoespacial — vuelos, satélites y sismos", "tag": "privado", "color": "green"},
     {"name": "htb-writeups/", "desc": "Writeups de máquinas HackTheBox desde Kali + OpenVPN", "tag": "privado", "color": "green"},
+    {"name": "mcu-maker-qa/", "desc": "Despliegue y pruebas de las boards MCU Maker · informe de bugs", "tag": "privado", "color": "cyan"},
+    {"name": "decodeflow-qa/", "desc": "Pruebas a DecodeFlow (DFD web) + lab: validador de contraseñas", "tag": "privado", "color": "cyan"},
     {"name": "lab-pfsense-vpn/", "desc": "Sede simulada: pfSense + OpenVPN (acceso remoto) en VirtualBox", "tag": "privado", "color": "sage"},
     {"name": "lab-pihole/", "desc": "DNS sinkhole Pi-hole en Ubuntu Server, puenteado a la LAN · Scrum", "tag": "privado", "color": "sage"},
     {"name": "alexrocket.py/", "desc": "Kit portable de soporte y ciber: Ventoy, Kali Live e ISOs", "tag": "privado", "color": "sage"},
+    {"name": "shadow-and-fang/", "desc": "Mi juego de plataformas 2D en Godot 4: Alex y el perro legendario", "tag": "privado", "color": "pink"},
     {"name": "transcriptor/", "desc": "App Android que convierte audios de WhatsApp en texto", "tag": "privado", "color": "muted"}
   ],
   "links": {"github": "https://github.com/alexstacks-lab", "linkedin": "https://www.linkedin.com/in/alexandro-alanya-montoya-27ba56307", "instagram": "https://www.instagram.com/alexandroam_/", "x": "https://x.com/tobicode2005", "email": "alexandropriv2005@gmail.com"},
@@ -58,9 +62,10 @@
       "sistemas",
       [
         ["Linux", "linux", "FCC624"],
-        ["Ubuntu", "ubuntu", "E95420"],
+        ["Ubuntu / Server", "ubuntu", "E95420"],
         ["Red Hat", "redhat", "EE0000"],
         ["Kali Linux", "kalilinux", "2F9BF0"],
+        ["Debian", "debian", "D7385E"],
         ["Windows", "windows", "00A4EF"]
       ]
     ],
@@ -74,7 +79,19 @@
         ["Nmap", "radar", "4FC3F7"],
         ["OpenVPN", "openvpn", "EA7E20"],
         ["Pi-hole", "pihole", "F60D1A"],
+        ["OSINT", "globe", "7EBC6F"],
         ["Hack The Box", "hackthebox", "9FEF00"]
+      ]
+    ],
+    [
+      "soporte TI",
+      [
+        ["Ventoy", "usb", "3FB6E8"],
+        ["Hiren's Boot", "wrench", "F2B33D"],
+        ["SystemRescue", "wrench", "5BC0EB"],
+        ["Sysinternals", "gear", "4AA3F0"],
+        ["HWiNFO", "chip", "E8524A"],
+        ["CrystalDiskInfo", "disk", "6FD3A6"]
       ]
     ],
     [
@@ -83,8 +100,10 @@
         ["Python", "python", "3776AB"],
         ["C++", "cplusplus", "4A9BE0"],
         ["JavaScript", "javascript", "F7DF1E"],
+        ["TypeScript", "typescript", "3B8EEA"],
         ["Bash", "gnubash", "4EAA25"],
-        ["PowerShell", "terminal", "5391FE"]
+        ["PowerShell", "terminal", "5391FE"],
+        ["GDScript", "godotengine", "478CBF"]
       ]
     ],
     [
@@ -93,7 +112,10 @@
         ["HTML5", "html5", "E34F26"],
         ["CSS", "css", "8A5CD1"],
         ["Bootstrap", "bootstrap", "9B72E0"],
+        ["Tailwind", "tailwindcss", "06B6D4"],
         ["React", "react", "61DAFB"],
+        ["Node.js", "nodedotjs", "5FA04E"],
+        ["Vite", "vite", "9B5CFF"],
         ["PostgreSQL", "postgresql", "6A8FE8"],
         ["MySQL", "mysql", "4BA3D6"]
       ]
@@ -102,7 +124,8 @@
       "hardware & IoT",
       [
         ["Arduino", "arduino", "00A8B3"],
-        ["ESP32", "espressif", "E7352C"]
+        ["ESP32", "espressif", "E7352C"],
+        ["Ensamblaje de PCs", "chip", "F2CC60"]
       ]
     ],
     [
@@ -111,19 +134,67 @@
         ["VirtualBox", "virtualbox", "4C7FD6"],
         ["Git", "git", "F05033"],
         ["GitHub", "github", "E6EDF3"],
+        ["GitHub Actions", "githubactions", "2088FF"],
         ["VS Code", "code", "3EA6F0"],
         ["Godot", "godotengine", "478CBF"],
         ["Android", "android", "3DDC84"]
       ]
     ],
     [
+      "metodología",
+      [
+        ["Scrum", "cycle", "2DB3E8"],
+        ["Kanban", "kanban", "F2CC60"]
+      ]
+    ],
+    [
       "aprendiendo",
       [
+        ["Wazuh", "shield", "3595F5"],
+        ["Splunk", "splunk", "65A637"],
+        ["Elastic", "elasticstack", "FEC514"],
+        ["Metasploit", "metasploit", "2596CD"],
+        ["Burp Suite", "burpsuite", "FF6633"],
+        ["Hashcat", "hashcat", "E6EDF3"],
+        ["Docker", "docker", "2496ED"],
         ["Django", "django", "44B78B"],
         ["NumPy", "numpy", "4DABCF"],
         ["Pandas", "pandas", "E70488"],
         ["OpenCV", "opencv", "8C6CF0"]
       ]
+    ]
+  ],
+  "htb": {"user": "AlexGG2005", "machine": "Management", "rank": 2140, "date": "28 Sep 2026", "xp": 585, "path": "Starting Point → máquinas"},
+  "now": [
+    ["green", "Cursando el semestre V de Ingeniería de Ciberseguridad — SENATI"],
+    ["lime", "Resolviendo máquinas en HackTheBox · último pwn: Management"],
+    ["pink", "Construyendo ANZUELO, juego anti-estafas para Perú"],
+    ["cyan", "Diseñando mi tesis: SOC ligero para pymes"],
+    ["gold", "Desplegando y probando proyectos open source (Ojo de Dios, MCU Maker)"],
+    ["sage", "Aprendiendo herramientas SOC: Wazuh · Splunk · Elastic"]
+  ],
+  "fun_facts": [
+    [
+      "paw",
+      "Yako, mi perrito, es quien te dio la bienvenida allá arriba",
+      []
+    ],
+    [
+      "chip",
+      "Armo y reparo PCs — Ensamblaje y Reparación en INFOUNI",
+      []
+    ],
+    [
+      "game",
+      "Estoy creando mi propio juego 2D en Godot: Shadow & Fang",
+      [
+        "godotengine"
+      ]
+    ],
+    [
+      "heart",
+      "Hincha de la U · fan de McLaren F1 · Dota 2 · The Mentalist",
+      ["mclaren", "dota2"]
     ]
   ]
 }
