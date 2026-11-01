@@ -19,32 +19,111 @@
     ["Estudios", "Ing. de Ciberseguridad — SENATI"],
     ["", "Formación Dual · Escuela de TI · Sem. V"],
     ["Enfoque", "SOC / NOC · Blue Team · Forense"],
-    ["Certs", "Cisco NetAcad · Fortinet NSE 1*"],
+    ["Certs", "CCNAv7 · PCAP · Fortinet NSE 1"],
     ["Redes", "VLAN · ACL · NAT · SSH · Port-Sec"],
-    ["Lab", "Kali · pfSense · OpenVPN · Pi-hole"],
-    ["Tools", "Nmap · Packet Tracer · VirtualBox"],
-    ["Web", "HTML · CSS · Bootstrap · React"],
-    ["Code", "Python · C++ · JavaScript · SQL"],
+    ["SO", "Linux · Ubuntu · Red Hat · Kali"],
+    ["Lab", "pfSense · OpenVPN · Pi-hole · VirtualBox"],
+    ["Tools", "Nmap · Wireshark · Packet Tracer"],
+    ["Code", "Python · C++ · JavaScript · Bash"],
+    ["IoT", "Arduino · ESP32"],
     ["Practica", "HackTheBox (Starting Point)"],
     ["Idiomas", "Español (nativo) · Inglés (básico)"],
     ["Meta", "Investigación de ciberdelitos"],
     ["Estado", "● Disponible para prácticas"]
   ],
-  "neofetch_footnote": "* en curso",
   "experience": [
-    {"year": "2026", "title": "Fortinet NSE 1 — Cybersecurity & Cloud Fundamentals", "detail": "Fortinet Training Institute · en curso", "head": true},
-    {"year": "2026", "title": "SENATI · Network Security (Cisco) · Criptografía Aplicada", "detail": "Seguridad en Redes Inalámbricas · informes de práctica semanales"},
-    {"year": "2025", "title": "Ensamblaje y Reparación de Computadoras — INFOUNI", "detail": "Hardware, diagnóstico y mantenimiento de equipos"},
-    {"year": "2023", "init": true, "title": "Ingeniería de Ciberseguridad — SENATI (Dual)", "detail": "Sede Independencia · Escuela de Tecnologías de la Información"}
+    {"year": "2023 → hoy", "head": true, "status": "en curso", "title": "Ing. de Ciberseguridad — SENATI (Dual)", "detail": "Sede Independencia · Sem. V · Network Security, Criptografía Aplicada, Redes Inalámbricas"},
+    {"year": "Fortinet", "status": "ok", "title": "Cybersecurity and Cloud Fundamentals (NSE 1)", "detail": "Fortinet Training Institute"},
+    {"year": "Cisco", "status": "ok", "title": "PCAP: Programming Essentials in Python", "detail": "Cisco Networking Academy · OpenEDG Python Institute"},
+    {"year": "Cisco", "status": "ok", "title": "CCNAv7: Switching, Routing and Wireless Essentials", "detail": "Cisco Networking Academy"},
+    {"year": "Cisco", "status": "ok", "title": "CCNAv7: Introduction to Networks", "detail": "Cisco Networking Academy"},
+    {"year": "Cisco", "status": "ok", "title": "Networking Essentials", "detail": "Cisco Networking Academy"},
+    {"year": "Cisco", "status": "ok", "title": "Introduction to Cybersecurity", "detail": "Cisco Networking Academy"},
+    {"year": "Cisco", "status": "ok", "title": "Introduction to IoT", "detail": "Cisco Networking Academy"},
+    {"year": "2025", "status": "ok", "title": "Ensamblaje y Reparación de Computadoras — INFOUNI", "detail": "Hardware, diagnóstico y mantenimiento de equipos"}
   ],
   "projects": [
     {"name": "anzuelo/", "desc": "Juego diario anti-estafas para Perú (PWA) — ¿Picas o no picas?", "tag": "privado", "color": "pink"},
-    {"name": "tesis-soc-ia/", "desc": "SOC ligero con IA + riesgo humano frente a estafas, para pymes", "tag": "privado", "color": "cyan"},
+    {"name": "tesis-soc/", "desc": "SOC ligero + riesgo humano frente a estafas, para pymes", "tag": "privado", "color": "cyan"},
     {"name": "htb-writeups/", "desc": "Writeups de máquinas HackTheBox desde Kali + OpenVPN", "tag": "privado", "color": "green"},
     {"name": "lab-pfsense-vpn/", "desc": "Sede simulada: pfSense + OpenVPN (acceso remoto) en VirtualBox", "tag": "privado", "color": "sage"},
     {"name": "lab-pihole/", "desc": "DNS sinkhole Pi-hole en Ubuntu Server, puenteado a la LAN · Scrum", "tag": "privado", "color": "sage"},
     {"name": "alexrocket.py/", "desc": "Kit portable de soporte y ciber: Ventoy, Kali Live e ISOs", "tag": "privado", "color": "sage"},
     {"name": "transcriptor/", "desc": "App Android que convierte audios de WhatsApp en texto", "tag": "privado", "color": "muted"}
   ],
-  "links": {"github": "https://github.com/alexstacks-lab", "linkedin": "https://www.linkedin.com/in/alexandro-alanya-montoya-27ba56307", "instagram": "https://www.instagram.com/alexandroam_/", "x": "https://x.com/tobicode2005", "email": "alexandropriv2005@gmail.com"}
+  "links": {"github": "https://github.com/alexstacks-lab", "linkedin": "https://www.linkedin.com/in/alexandro-alanya-montoya-27ba56307", "instagram": "https://www.instagram.com/alexandroam_/", "x": "https://x.com/tobicode2005", "email": "alexandropriv2005@gmail.com"},
+  "whoami_style": "hacker",
+  "stack": [
+    [
+      "sistemas",
+      [
+        ["Linux", "linux", "FCC624"],
+        ["Ubuntu", "ubuntu", "E95420"],
+        ["Red Hat", "redhat", "EE0000"],
+        ["Kali Linux", "kalilinux", "2F9BF0"],
+        ["Windows", "windows", "00A4EF"]
+      ]
+    ],
+    [
+      "ciber & redes",
+      [
+        ["Fortinet", "fortinet", "EE3124"],
+        ["Cisco", "cisco", "1BA0D7"],
+        ["pfSense", "pfsense", "4C9BD6"],
+        ["Wireshark", "wireshark", "2E9BDB"],
+        ["Nmap", "radar", "4FC3F7"],
+        ["OpenVPN", "openvpn", "EA7E20"],
+        ["Pi-hole", "pihole", "F60D1A"],
+        ["Hack The Box", "hackthebox", "9FEF00"]
+      ]
+    ],
+    [
+      "lenguajes",
+      [
+        ["Python", "python", "3776AB"],
+        ["C++", "cplusplus", "4A9BE0"],
+        ["JavaScript", "javascript", "F7DF1E"],
+        ["Bash", "gnubash", "4EAA25"],
+        ["PowerShell", "terminal", "5391FE"]
+      ]
+    ],
+    [
+      "web & datos",
+      [
+        ["HTML5", "html5", "E34F26"],
+        ["CSS", "css", "8A5CD1"],
+        ["Bootstrap", "bootstrap", "9B72E0"],
+        ["React", "react", "61DAFB"],
+        ["PostgreSQL", "postgresql", "6A8FE8"],
+        ["MySQL", "mysql", "4BA3D6"]
+      ]
+    ],
+    [
+      "hardware & IoT",
+      [
+        ["Arduino", "arduino", "00A8B3"],
+        ["ESP32", "espressif", "E7352C"]
+      ]
+    ],
+    [
+      "herramientas",
+      [
+        ["VirtualBox", "virtualbox", "4C7FD6"],
+        ["Git", "git", "F05033"],
+        ["GitHub", "github", "E6EDF3"],
+        ["VS Code", "code", "3EA6F0"],
+        ["Godot", "godotengine", "478CBF"],
+        ["Android", "android", "3DDC84"]
+      ]
+    ],
+    [
+      "aprendiendo",
+      [
+        ["Django", "django", "44B78B"],
+        ["NumPy", "numpy", "4DABCF"],
+        ["Pandas", "pandas", "E70488"],
+        ["OpenCV", "opencv", "8C6CF0"]
+      ]
+    ]
+  ]
 }

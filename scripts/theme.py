@@ -36,21 +36,38 @@ def esc(s):
             .replace(">", "&gt;").replace('"', "&quot;"))
 
 
-def window(w, h, title, grad_id="bg"):
+# Paleta "hacker clásico" (verde y negro) para la sección whoami
+HK_BG1 = "#020b04"
+HK_BG2 = "#000000"
+HK_FRAME = "#1d6b31"
+HK_GREEN = "#00ff41"     # verde Matrix
+HK_MID = "#00c934"
+HK_DIM = "#0f7a2a"
+HK_PALE = "#a6f5b5"
+HK_TITLE = "#2f9e4f"
+
+
+def window(w, h, title, grad_id="bg", bg1=BG2, bg2=BG, frame=FRAME, title_col=MUTED, dots=None):
     """Marco de ventana de terminal: fondo, borde, barra con los 3 puntos y título."""
+    dots = dots or ["#ff5f56", "#ffbd2e", "#27c93f"]
     parts = [
         f'<defs><linearGradient id="{grad_id}" x1="0" y1="0" x2="0" y2="1">'
-        f'<stop offset="0" stop-color="{BG2}"/><stop offset="1" stop-color="{BG}"/>'
+        f'<stop offset="0" stop-color="{bg1}"/><stop offset="1" stop-color="{bg2}"/>'
         f'</linearGradient></defs>',
         f'<rect width="{w}" height="{h}" rx="12" fill="url(#{grad_id})"/>',
-        f'<rect x="0.5" y="0.5" width="{w-1}" height="{h-1}" rx="12" fill="none" stroke="{FRAME}"/>',
-        f'<line x1="0" y1="{TITLEBAR_H}" x2="{w}" y2="{TITLEBAR_H}" stroke="{FRAME}"/>',
+        f'<rect x="0.5" y="0.5" width="{w-1}" height="{h-1}" rx="12" fill="none" stroke="{frame}"/>',
+        f'<line x1="0" y1="{TITLEBAR_H}" x2="{w}" y2="{TITLEBAR_H}" stroke="{frame}"/>',
     ]
-    for i, dot in enumerate(["#ff5f56", "#ffbd2e", "#27c93f"]):
+    for i, dot in enumerate(dots):
         parts.append(f'<circle cx="{PAD + i*16}" cy="{TITLEBAR_H/2}" r="5" fill="{dot}"/>')
-    parts.append(f'<text x="{w/2}" y="{TITLEBAR_H/2 + 4}" fill="{MUTED}" font-size="12" '
+    parts.append(f'<text x="{w/2}" y="{TITLEBAR_H/2 + 4}" fill="{title_col}" font-size="12" '
                  f'text-anchor="middle">{esc(title)}</text>')
     return parts
+
+
+def hacker_window(w, h, title, grad_id="bg"):
+    return window(w, h, title, grad_id, HK_BG1, HK_BG2, HK_FRAME, HK_TITLE,
+                  [HK_GREEN, HK_MID, HK_DIM])
 
 
 def svg_open(w, h, extra_css=""):
