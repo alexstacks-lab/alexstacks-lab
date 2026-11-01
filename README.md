@@ -1,134 +1,65 @@
-### &nbsp;&nbsp;HOLA MUNDOOO SOY ALEX! :yellow_heart:
-<img alt="GIF" src="https://i.pinimg.com/originals/9e/a7/2e/9ea72ef078139ced289852e8a4ea0c5c.gif" width = 200/>
+<div align="center">
 
-<hr>
+<!-- ┌───────────────────────────────────────────────────────────────────────┐
+     │ Todas las tarjetas son SVG generadas por scripts/ (Python) y se       │
+     │ vuelven a dibujar solas cada día con .github/workflows/update-profile │
+     │ Para cambiar tu CV edita SOLO data/profile.json y haz commit.         │
+     └───────────────────────────────────────────────────────────────────────┘ -->
 
-<p style="color:#00ff00; font-family: 'Courier New', monospace;">
-Hola, soy <b>Alex</b> 👋, estudiante de <b>Ingeniería de Ciberseguridad</b> y apasionado por el mundo de la tecnología.<br><br>
+<img src="./assets/boot.svg" width="860" alt="Alexandro Alanya — Ciberseguridad · Redes · Soporte TI" />
 
-Actualmente me encuentro en una etapa de <b>aprendizaje constante</b>, con muchas ganas de seguir creciendo, explorar nuevas herramientas y comprender cómo funciona la seguridad tanto a nivel de software como de hardware.<br><br>
+<br>
 
-Me encanta todo lo relacionado con <b>redes, programación, sistemas y hardware</b>, y disfruto enfrentar retos que me permitan mejorar cada día.<br><br>
-
-Mis habilidades están reflejadas en las tecnologías que ves en mis tablas, las cuales sigo fortaleciendo con práctica y proyectos reales.
-
-</p>
-
-<p align="center">
-  <img src="https://media.giphy.com/media/26tn33aiTi1jkl6H6/giphy.gif" width="300"/>
-</p>
-
-## My Skills :computer:
-
-- **Programming Languages**
-<table>
-<tbody>
- <tr>
-<td align="center" width="50%">
-<img height=60px src="https://www.vectorlogo.zone/logos/python/python-ar21.svg">
-</td>
-</tr>
-</tbody>
-</table>
-
-- **Web Development**
-<table>
-<tbody>
- <tr>
-<td align="center" width="33%">
-<img height=60px src="https://www.vectorlogo.zone/logos/w3_html5/w3_html5-ar21.svg">
-</td>
-<td align="center" width="33%">
-<img height=70px src="https://1000logos.net/wp-content/uploads/2020/09/CSS-Logo.png">
-</td>
-<td align="center" width="33%">
-<img height=60px src="https://www.vectorlogo.zone/logos/getbootstrap/getbootstrap-ar21.svg">
-</td>
-</tr>
- <tr>
-<td align="center" width="33%">
-<img height=60px src="https://www.vectorlogo.zone/logos/javascript/javascript-ar21.svg">
-</td>
-<td align="center" width="33%">
-<img height=60px src="https://www.vectorlogo.zone/logos/postgresql/postgresql-ar21.svg">
-</td>
-<td align="center" width="33%">
-<img height=60px src="https://www.vectorlogo.zone/logos/mysql/mysql-ar21.svg">
-</td>
-</tr>
-</tbody>
-</table>
-
-<hr>
-
-## Currently Learning :beginner:
-
-- **Data Science**
+<h3><code>alex@github ~ $ whoami</code></h3>
 
 <table>
-<tbody>
- <tr>
-<td align="center" width="25%">
-<img height=60px src="https://www.vectorlogo.zone/logos/numpy/numpy-ar21.svg">
-</td>
-<td align="center" width="25%">
-<img height=60px src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Pandas_logo.svg">
-</td>
-<td align="center" width="25%">
-<img height=80px src="https://www.vectorlogo.zone/logos/opencv/opencv-ar21.svg">
-</td>
-</tr>
-</tbody>
-</table>
-
-- **Backend**
-<table>
-<tbody>
 <tr>
-<td align="center" width="50%">
-<img height="60px" src="https://www.vectorlogo.zone/logos/djangoproject/djangoproject-ar21.svg">
-</td>
+<td valign="top"><img src="./assets/portrait.svg" width="420" alt="Retrato ASCII de mi personaje pixel-art" /></td>
+<td valign="top"><img src="./assets/neofetch.svg" width="420" alt="Ficha tipo neofetch: estudios, experiencia, herramientas y estado" /></td>
 </tr>
-</tbody>
 </table>
 
-<hr>
+<br>
 
-- **Programming & Security**
+<h3><code>alex@github ~/carrera $ git log --graph</code></h3>
 
-<table>
-<tbody>
-<tr>
-<td align="center" width="50%">
-<b>Programming</b><br>
-<img height="60px" src="https://raw.githubusercontent.com/isocpp/logos/master/cpp_logo.png"><br>
-</td>
-<td align="center" width="50%">
-<b>Firewall</b><br>
-<img height="55px" src="pfsense.png"><br>
-</td>
-</tr>
-</tbody>
-</table>
+<img src="./assets/experience.svg" width="860" alt="Experiencia y formación como historial de git" />
 
-<hr>
+<br>
+<br>
 
-## GitHub Stats :bar_chart:
+<h3><code>alex@github ~ $ ls -la ~/proyectos</code></h3>
 
-<p align="center">
-  <img height="165em" src="https://github-readme-streak-stats.herokuapp.com/?user=alexstacks-lab&theme=chartreuse-dark&hide_border=true" />
-</p>
+<img src="./assets/projects.svg" width="860" alt="Proyectos y laboratorios" />
 
-## Muchas Gracias por tu visita , Hasta Pronto. 🐭
+<br>
+<br>
 
-<hr>
+<h3><code>alex@github ~ $ ./contribuciones.sh</code></h3>
 
-## Mis redes sociales 🌐
+<img src="./assets/heatmap.svg" width="860" alt="Mis contribuciones del último año — se actualiza cada día" />
+<br><br>
+<img src="./assets/stats.svg" width="860" alt="Rachas y estadísticas de contribución — se actualiza cada día" />
 
-<p>
-<a href="https://github.com/alexstacks-lab"><img src="https://img.shields.io/badge/-alexstacks--lab-black?logo=github&style=flat-square"/></a>
-<a href="https://www.linkedin.com/in/alexandro-alanya-montoya-27ba56307/"> <img src="https://img.shields.io/badge/LinkedIn-Alexandro%20Alanya-0A66C2?style=flat-square&logo=linkedin&logoColor=white"/></a>
-<a href="https://www.instagram.com/alexandroam_/"><img src="https://img.shields.io/badge/-alexandroam_-purple?logo=instagram&style=flat-square"/></a>
-<a href="mailto:alexandropriv2005@gmail.com"><img src="https://img.shields.io/badge/-alexandropriv2005@gmail.com-black?logo=gmail&style=flat-square"/></a>
-<a href="https://x.com/tobicode2005"><img src="https://img.shields.io/badge/@tobicode2005-black?logo=x&logoColor=white&style=flat-square"/></a>
-</p>
+<br>
+<br>
+
+<h3><code>alex@github ~ $ ./contacto.sh</code></h3>
+
+<p><b>Ciberseguridad · Redes · Soporte TI</b> — abierto a prácticas pre-profesionales y roles junior SOC / NOC</p>
+
+![Disponible](https://img.shields.io/badge/●_Disponible-prácticas_pre--profesionales-39d353?style=for-the-badge&labelColor=0d1117)
+![Lima, Perú](https://img.shields.io/badge/📍_Lima-Perú-e8857f?style=for-the-badge&labelColor=0d1117)
+![HackTheBox](https://img.shields.io/badge/HackTheBox-AlexGG2005-9FEF00?style=for-the-badge&logo=hackthebox&logoColor=9FEF00&labelColor=0d1117)
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Alexandro_Alanya-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0d1117)](https://www.linkedin.com/in/alexandro-alanya-montoya-27ba56307)
+
+<!-- Si quieres un botón de correo, borra estas marcas de comentario y pon tu correo:
+[![Email](https://img.shields.io/badge/Email-Escríbeme-22d3ee?style=for-the-badge&logo=gmail&logoColor=white&labelColor=0d1117)](mailto:TU-CORREO)
+-->
+
+<br>
+
+<sub>⚙️ Tarjetas generadas con Python + GitHub Actions · se actualizan solas cada día</sub>
+
+</div>
