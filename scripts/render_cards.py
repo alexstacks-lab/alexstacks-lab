@@ -98,54 +98,91 @@ def figlet_rows(text):
 BOX = {"═": "LR", "║": "UD", "╗": "LD", "╔": "RD", "╝": "LU", "╚": "RU"}
 
 
+def yako_data_uri(max_h=220):
+    """Yako (source/yako.png) recortado y reducido, embebido como PNG."""
+    import base64, io
+    from PIL import Image
+    im = Image.open(os.path.join(ROOT, "source", "yako.png")).convert("RGBA")
+    im = im.crop(im.getchannel("A").point(lambda a: 255 if a > 20 else 0).getbbox())
+    scale = (max_h * 1.25) / im.height              # 1.25x para que se vea nítido en pantallas retina
+    im = im.resize((round(im.width * scale), round(im.height * scale)), Image.LANCZOS)
+    buf = io.BytesIO()
+    im.save(buf, "PNG", optimize=True)
+    return "data:image/png;base64," + base64.b64encode(buf.getvalue()).decode(), im.width / im.height
+
+
+def paw(cx, cy, r, color):
+    """Huellita: almohadilla + 4 deditos."""
+    return (f'<ellipse cx="{cx:.1f}" cy="{cy + r * 0.35:.1f}" rx="{r * 0.62:.1f}" ry="{r * 0.5:.1f}" fill="{color}"/>'
+            + "".join(f'<circle cx="{cx + dx * r:.1f}" cy="{cy + dy * r:.1f}" r="{r * 0.24:.1f}" fill="{color}"/>'
+                      for dx, dy in [(-0.62, -0.28), (-0.22, -0.62), (0.22, -0.62), (0.62, -0.28)]))
+
+
 def render_boot():
     W = 880
-    rows = figlet_rows(P.get("banner_text", "ALEX"))
-    n_cols = max(len(r) for r in rows)
-    cw = min(16.0, (W - 2 * PAD - 40) / n_cols)
-    chh = cw * 1.55
-    logo_w, logo_h = n_cols * cw, len(rows) * chh
+    YH = 200                                   # alto de Yako
+    uri, ratio = yako_data_uri(YH)
+    YW = YH * ratio
     boot = P.get("boot", [])
     line_h = 26
-    logo_y = TITLEBAR_H + 26
-    name_y = logo_y + logo_h + 38
+    yako_y = TITLEBAR_H + 22
+    yx = W / 2 - YW / 2 - 70
+    name_y = yako_y + YH + 52
     tag_y = name_y + 26
     sep_y = tag_y + 22
     lines_y = sep_y + 30
     H = int(lines_y + len(boot) * line_h + 18)
 
-    parts = svg_open(W, H, FADE_CSS)
+    css = (FADE_CSS +
+           ".yk{transform-box:fill-box;transform-origin:50% 100%;opacity:0;"
+           "animation:yin .7s cubic-bezier(.2,1.5,.4,1) .15s both}"
+           "@keyframes yin{0%{opacity:0;transform:translateY(30px) scale(.8)}100%{opacity:1;transform:none}}"
+           ".bob{animation:bob 2.4s ease-in-out .9s infinite alternate}"
+           "@keyframes bob{0%{transform:translateY(0)}100%{transform:translateY(-7px)}}"
+           ".shd{transform-box:fill-box;transform-origin:center;animation:shd 2.4s ease-in-out .9s infinite alternate}"
+           "@keyframes shd{0%{transform:scaleX(1);opacity:.5}100%{transform:scaleX(.78);opacity:.25}}"
+           ".pw{opacity:0;animation:pw 3.6s ease-out infinite}"
+           "@keyframes pw{0%{opacity:0;transform:translateY(0) scale(.6)}15%{opacity:.9}"
+           "100%{opacity:0;transform:translateY(-70px) scale(1)}}"
+           ".bub{transform-box:fill-box;transform-origin:0% 80%;opacity:0;animation:bub .5s cubic-bezier(.2,1.5,.4,1) 1s both}"
+           "@keyframes bub{0%{opacity:0;transform:scale(.6)}100%{opacity:1;transform:none}}")
+    parts = svg_open(W, H, css)
     parts += window(W, H, f"{USER}@{HOST}: ~$ ./boot.sh")
-    parts.append('<defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">'
-                 f'<stop offset="0" stop-color="{PINK}"/><stop offset="0.5" stop-color="{SKIN}"/>'
-                 f'<stop offset="1" stop-color="{SAGE}"/></linearGradient></defs>')
 
-    lx = (W - logo_w) / 2
-    # logo: bloques llenos con degradado + "sombra" de líneas finas
-    parts.append(wipe("logo", lx - 2, logo_y - 2, logo_w + 4, logo_h + 4, 0.2, 1.1))
-    parts.append('<g clip-path="url(#logo)">')
-    blocks, shadow = [], []
-    for ry, row in enumerate(rows):
-        for cx, ch in enumerate(row):
-            x, y = lx + cx * cw, logo_y + ry * chh
-            if ch == "█":
-                blocks.append(f'M{x:.1f} {y:.1f}h{cw+0.4:.1f}v{chh+0.4:.1f}h-{cw+0.4:.1f}z')
-            elif ch in BOX:
-                mx, my = x + cw / 2, y + chh / 2
-                for seg in BOX[ch]:
-                    ex, ey = {"L": (x, my), "R": (x + cw, my), "U": (mx, y), "D": (mx, y + chh)}[seg]
-                    shadow.append(f'M{mx:.1f} {my:.1f}L{ex:.1f} {ey:.1f}')
-    parts.append(f'<path d="{"".join(shadow)}" stroke="{PINK}" stroke-opacity="0.45" stroke-width="1.6" fill="none"/>')
-    parts.append(f'<path d="{"".join(blocks)}" fill="url(#lg)"/>')
+    # sombra + Yako flotando
+    parts.append(f'<ellipse class="shd" cx="{yx + YW / 2:.1f}" cy="{yako_y + YH + 6:.1f}" rx="{YW * 0.36:.1f}" ry="7" '
+                 f'fill="#000" opacity=".5"/>')
+    parts.append(f'<g class="yk"><g class="bob"><image href="{uri}" x="{yx:.1f}" y="{yako_y}" '
+                 f'width="{YW:.1f}" height="{YH}"/></g></g>')
+    # huellitas que suben
+    for i, (dx, dy, r, c, d) in enumerate([(-24, 40, 7, PINK, 1.6), (YW + 8, 70, 6, CREAM, 2.8),
+                                           (-8, 120, 5, SKIN, 4.0), (YW - 6, 150, 6, PINK, 5.1)]):
+        parts.append(f'<g class="pw" style="animation-delay:{d:.1f}s">{paw(yx + dx, yako_y + dy, r, c)}</g>')
+
+    # globo de diálogo
+    bx, by_, bw, bh = yx + YW + 26, yako_y + 34, 300, 74
+    parts.append(f'<g class="bub">')
+    parts.append(f'<path d="M{bx + 14} {by_}h{bw - 28}a14 14 0 0 1 14 14v{bh - 28}a14 14 0 0 1 -14 14'
+                 f'h{-(bw - 46)}l-14 16l2 -16h-2a14 14 0 0 1 -14 -14v{-(bh - 28)}a14 14 0 0 1 14 -14z" '
+                 f'fill="{TILE}" stroke="{PINK}" stroke-opacity=".7"/>')
     parts.append('</g>')
+    l1, l2 = "¡guau! soy Yako 🐾".replace(" 🐾", ""), "bienvenido al perfil de Alex"
+    parts.append(wipe("bub1", bx + 14, by_ + 10, bw - 28, 26, 1.4, 0.6))
+    parts.append(f'<g clip-path="url(#bub1)"><text x="{bx + 18}" y="{by_ + 30}" font-size="17" font-weight="700" '
+                 f'fill="{CREAM}">{esc(l1)}</text></g>')
+    parts.append(wipe("bub2", bx + 14, by_ + 38, bw - 28, 26, 2.0, 0.8))
+    parts.append(f'<g clip-path="url(#bub2)"><text x="{bx + 18}" y="{by_ + 56}" font-size="14" '
+                 f'fill="{MUTED}">{esc(l2)}</text></g>')
+    parts.append(f'<g class="pw" style="animation-delay:2.9s;animation-duration:3s">'
+                 f'{paw(bx + bw - 26, by_ + 26, 7, PINK)}</g>')
 
-    parts.append(f'<text class="f" style="animation-delay:1.3s" x="{W/2}" y="{name_y:.0f}" fill="{INK}" '
-                 f'font-size="22" font-weight="700" text-anchor="middle">{esc(P["full_name"])}</text>')
-    parts.append(f'<text class="f" style="animation-delay:1.5s" x="{W/2}" y="{tag_y:.0f}" fill="{MUTED}" '
+    parts.append(f'<text class="f" style="animation-delay:.6s" x="{W/2}" y="{name_y:.0f}" fill="{INK}" '
+                 f'font-size="24" font-weight="700" text-anchor="middle">{esc(P["full_name"])}</text>')
+    parts.append(f'<text class="f" style="animation-delay:.8s" x="{W/2}" y="{tag_y:.0f}" fill="{MUTED}" '
                  f'font-size="14" text-anchor="middle">{esc(P["tagline"])}</text>')
     parts.append(f'<line x1="{PAD}" y1="{sep_y:.0f}" x2="{W-PAD}" y2="{sep_y:.0f}" stroke="{FRAME}" stroke-dasharray="3 5"/>')
 
-    t = 1.9
+    t = 1.2
     for i, (status, msg) in enumerate(boot):
         y = lines_y + i * line_h
         col = GREEN if status == "OK" else GOLD
@@ -155,7 +192,7 @@ def render_boot():
         parts.append(f'<g clip-path="url(#b{i})"><text x="{PAD}" y="{y:.0f}" font-size="15" xml:space="preserve">'
                      f'<tspan fill="{MUTED}">[</tspan><tspan fill="{col}" font-weight="700">{esc(status.center(6))}</tspan>'
                      f'<tspan fill="{MUTED}">] </tspan><tspan fill="{INK}">{esc(msg)}</tspan></text></g>')
-        if status != "OK":  # cursor parpadeante al final de la línea en espera
+        if status != "OK":
             cx = PAD + (len(label) + 1 + len(msg)) * 15 * 0.6 + 6
             parts.append(f'<rect x="{cx:.0f}" y="{y-14:.0f}" width="9" height="17" fill="{GOLD}" opacity="0">'
                          f'<set attributeName="opacity" to="1" begin="{t+dur:.2f}s"/>'
@@ -396,9 +433,73 @@ def render_stack():
     save("stack.svg", parts)
 
 
+# =============================================================================
+# 6. CONTACTO — una etiqueta flotante por archivo (para que cada una sea un enlace)
+# =============================================================================
+def contact_chip(fname, label, value, color, slug=None, dot=False, delay=0.0):
+    FS = 14
+    text_w = (len(label) + len(value) + 2) * FS * 0.6
+    icon_w = 18
+    cw = 14 + icon_w + 10 + text_w + 16
+    CH = 38
+    W, H = int(cw + 8), CH + 22                     # espacio para flotar y la sombra
+    x, y = 4, 6
+    c = "#" + color.lstrip("#")
+    dur = 2.4 + (len(fname) * 0.23) % 1.3
+    css = (".pop{transform-box:fill-box;transform-origin:center;opacity:0;animation:pop .55s cubic-bezier(.2,1.4,.4,1) both}"
+           "@keyframes pop{0%{opacity:0;transform:scale(.8)}100%{opacity:1;transform:none}}"
+           f".fl{{animation:fl {dur:.2f}s ease-in-out infinite alternate}}"
+           "@keyframes fl{0%{transform:translateY(3px)}100%{transform:translateY(-3px)}}"
+           f".sh{{transform-box:fill-box;transform-origin:center;animation:sh {dur:.2f}s ease-in-out infinite alternate}}"
+           "@keyframes sh{0%{transform:scaleX(1);opacity:.6}100%{transform:scaleX(.75);opacity:.2}}")
+    parts = svg_open(W, H, css)
+    parts.append('<defs><filter id="bl" x="-30%" y="-300%" width="160%" height="700%">'
+                 '<feGaussianBlur stdDeviation="3"/></filter></defs>')
+    parts.append(f'<g class="pop" style="animation-delay:{delay:.2f}s">')
+    parts.append(f'<ellipse class="sh" cx="{x + cw / 2:.1f}" cy="{y + CH + 8}" rx="{cw / 2 - 8:.1f}" ry="3" '
+                 f'fill="{c}" filter="url(#bl)"/>')
+    parts.append('<g class="fl">')
+    parts.append(f'<rect x="{x}" y="{y}" width="{cw:.1f}" height="{CH}" rx="10" fill="{TILE}" '
+                 f'stroke="{c}" stroke-opacity=".65"/>')
+    parts.append(f'<rect x="{x + 1}" y="{y + 1}" width="{cw - 2:.1f}" height="{CH / 2 - 1}" rx="9" fill="{c}" fill-opacity=".08"/>')
+    ix, iy = x + 14, y + (CH - icon_w) / 2
+    if dot:
+        parts.append(f'<circle cx="{ix + 9}" cy="{iy + 9}" r="5" fill="{c}"/>'
+                     f'<circle cx="{ix + 9}" cy="{iy + 9}" r="5" fill="none" stroke="{c}" stroke-width="1.5">'
+                     f'<animate attributeName="r" values="5;10" dur="1.6s" repeatCount="indefinite"/>'
+                     f'<animate attributeName="opacity" values=".9;0" dur="1.6s" repeatCount="indefinite"/></circle>')
+    elif slug == "linkedin":
+        parts.append(f'<rect x="{ix}" y="{iy}" width="18" height="18" rx="3.5" fill="{c}"/>'
+                     f'<text x="{ix + 9}" y="{iy + 14}" font-size="12.5" font-weight="700" fill="{BG}" '
+                     f'text-anchor="middle" font-family="Arial, Helvetica, sans-serif">in</text>')
+    elif slug:
+        parts.append(f'<path transform="translate({ix} {iy}) scale(0.75)" d="{icon_path(slug)}" fill="{c}"/>')
+    parts.append(f'<text x="{ix + icon_w + 10}" y="{y + CH / 2 + 5}" font-size="{FS}" xml:space="preserve">'
+                 f'<tspan fill="{INK}" font-weight="700">{esc(label)}</tspan>'
+                 f'<tspan fill="{MUTED}">  {esc(value)}</tspan></text>')
+    parts.append('</g></g>')
+    os.makedirs(os.path.join(ASSETS, "contact"), exist_ok=True)
+    save(f"contact/{fname}.svg", parts)
+
+
+def render_contact():
+    chips = [
+        ("disponible", "Disponible", "prácticas pre-profesionales", "39d353", None, True),
+        ("lima", "Lima", "Perú", "e8857f", "googlemaps", False),
+        ("linkedin", "LinkedIn", "Alexandro Alanya", "2E8BEA", "linkedin", False),
+        ("gmail", "Gmail", "alexandropriv2005@gmail.com", "EA4335", "gmail", False),
+        ("instagram", "Instagram", "alexandroam_", "FF4F8B", "instagram", False),
+        ("x", "X", "@tobicode2005", "E6EDF3", "x", False),
+        ("github", "GitHub", "alexstacks-lab", "3FB950", "github", False),
+    ]
+    for i, (f, l, v, c, slug, dot) in enumerate(chips):
+        contact_chip(f, l, v, c, slug, dot, delay=0.1 + i * 0.08)
+
+
 if __name__ == "__main__":
     render_boot()
     render_neofetch()
     render_experience()
     render_projects()
     render_stack()
+    render_contact()
