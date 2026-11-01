@@ -1,0 +1,53 @@
+name: Actualizar perfil
+
+# Redibuja las tarjetas del README con datos reales:
+#  - todos los días (~06:11 UTC = 1:11 a.m. en Lima)
+#  - cada vez que haces push a main (p. ej. al editar data/profile.json)
+#  - a mano desde la pestaña Actions ("Run workflow")
+
+"on":
+  schedule:
+    - cron: "11 6 * * *"
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths-ignore:
+      - "assets/**"
+      - "data/contributions.json"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-profile
+  cancel-in-progress: true
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: scripts/requirements.txt
+
+      - name: Instalar dependencias
+        run: pip install -r scripts/requirements.txt
+
+      - name: Descargar contribuciones reales
+        run: python scripts/fetch_contributions.py
+
+      - name: Dibujar tarjetas
+        run: |
+          python scripts/make_portrait_svg.py
+          python scripts/render_cards.py
+          python scripts/render_activity.py
+
+      - name: Guardar cambios
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: actualizar tarjetas del perfil [skip ci]"
+          file_pattern: "assets data/contributions.json"
