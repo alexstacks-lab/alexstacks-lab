@@ -50,14 +50,20 @@ def wipe(uid, x, y, w, h, begin, dur):
             f'dur="{dur:.2f}s" fill="freeze"/></rect></clipPath>')
 
 
-def pill(x, y, text, color, size=12, anchor="start"):
-    w = len(text) * size * 0.62 + 16
+def pill(x, y, text, color, size=12, anchor="start", lock=False):
+    icon_w = 13 if lock else 0
+    w = len(text) * size * 0.62 + 16 + icon_w
     if anchor == "end":
         x -= w
-    return (f'<rect x="{x:.1f}" y="{y - size - 3:.1f}" width="{w:.1f}" height="{size + 9}" rx="{(size+9)/2:.1f}" '
-            f'fill="{color}" fill-opacity="0.14" stroke="{color}" stroke-opacity="0.55"/>'
-            f'<text x="{x + w/2:.1f}" y="{y:.1f}" fill="{color}" font-size="{size}" '
+    out = (f'<rect x="{x:.1f}" y="{y - size - 3:.1f}" width="{w:.1f}" height="{size + 9}" rx="{(size+9)/2:.1f}" '
+           f'fill="{color}" fill-opacity="0.14" stroke="{color}" stroke-opacity="0.55"/>')
+    if lock:  # candado dibujado (no depende de emojis)
+        lx, ly = x + 9, y - size + 3
+        out += (f'<path d="M{lx+1.5:.1f} {ly+4:.1f}v-1.8a2.5 2.5 0 0 1 5 0v1.8" fill="none" stroke="{color}" stroke-width="1.4"/>'
+                f'<rect x="{lx:.1f}" y="{ly+4:.1f}" width="8" height="6.5" rx="1.3" fill="{color}"/>')
+    out += (f'<text x="{x + icon_w/2 + w/2:.1f}" y="{y:.1f}" fill="{color}" font-size="{size}" '
             f'text-anchor="middle">{esc(text)}</text>')
+    return out
 
 
 # =============================================================================
@@ -272,7 +278,7 @@ def render_projects():
                          f'fill="{TILE}" fill-opacity="0.7"/>')
         parts.append(f'<text x="{PAD}" y="{y}" font-size="15" font-weight="700" fill="{CYAN}">{esc(p_["name"])}</text>')
         parts.append(f'<text x="{PAD + name_w:.0f}" y="{y}" font-size="14" fill="{INK}">{esc(p_["desc"])}</text>')
-        parts.append(pill(W - PAD, y, p_["tag"], col, 12, anchor="end"))
+        parts.append(pill(W - PAD, y, p_["tag"], col, 12, anchor="end", lock=p_["tag"].lower() == "privado"))
         parts.append('</g>')
     save("projects.svg", parts)
 
