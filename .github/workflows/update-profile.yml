@@ -2,7 +2,7 @@ name: Actualizar perfil
 
 # Redibuja las tarjetas del README con datos reales:
 #  - todos los días (~06:11 UTC = 1:11 a.m. en Lima)
-#  - cada vez que haces push a main (p. ej. al editar data/profile.json)
+#  - cada vez que subes cambios a main (aunque solo subas imágenes)
 #  - a mano desde la pestaña Actions ("Run workflow")
 
 "on":
@@ -11,9 +11,6 @@ name: Actualizar perfil
   workflow_dispatch: {}
   push:
     branches: [main]
-    paths-ignore:
-      - "assets/**"
-      - "data/contributions.json"
 
 permissions:
   contents: write
